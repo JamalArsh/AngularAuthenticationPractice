@@ -2,7 +2,9 @@ import { Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from '../service/auth.service';
+import { UpdatepopupComponent } from '../updatepopup/updatepopup.component';
 
 @Component({
   selector: 'app-userlisting',
@@ -10,7 +12,7 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./userlisting.component.css'],
 })
 export class UserlistingComponent {
-  constructor(private service: AuthService) {
+  constructor(private service: AuthService, private dialog: MatDialog) {
     this.loadUser();
   }
 
@@ -37,5 +39,14 @@ export class UserlistingComponent {
     });
   }
 
-  updateUser(code: any) {}
+  updateUser(code: any) {
+    this.dialog.open(UpdatepopupComponent, {
+      enterAnimationDuration: '1000ms',
+      exitAnimationDuration: '500ms',
+      width: '50%',
+      data: {
+        usercode: code,
+      },
+    });
+  }
 }

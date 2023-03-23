@@ -1,1 +1,48 @@
-<p>updatepopup works!</p>
+<mat-card>
+  <mat-card-header>
+    <h1>Update user</h1>
+  </mat-card-header>
+  <mat-card-content>
+    <form
+      class="example-form"
+      [formGroup]="registrationForm"
+      (ngSubmit)="updateUser()"
+    >
+      <!-- <mat-form-field class="example-full-width">
+        <mat-label>User name</mat-label>
+        <input matInput formControlName="id" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password" />
+      </mat-form-field> -->
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Role</mat-label>
+        <mat-select formControlName="role">
+          <mat-option *ngFor="let item of roleList" [value]="item.code">
+            {{ item.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- <div>
+        <mat-radio-group formControlName="gender" aria-label="Gender">
+          <mat-radio-button value="male">Male</mat-radio-button>
+          <mat-radio-button value="female">Female</mat-radio-button>
+        </mat-radio-group>
+      </div> -->
+      <div>
+        <button class="button" mat-raised-button color="primary">Update</button>
+        <a class="button" mat-dialog-close mat-raised-button color="accent"
+          >Close</a
+        >
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

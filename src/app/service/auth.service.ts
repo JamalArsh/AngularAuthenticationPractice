@@ -11,6 +11,9 @@ export class AuthService {
   GetAll() {
     return this.http.get(this.apiurl);
   }
+  GetAllRole() {
+    return this.http.get('http://localhost:3000/role');
+  }
   GetByCode(code: any) {
     return this.http.get(this.apiurl + '/' + code);
   }

@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
   constructor(private http: HttpClient) {}
-  apiurl = 'http://localhost:300/user';
+  apiurl = 'http://localhost:3000/user';
 
   GetAll() {
     return this.http.get(this.apiurl);

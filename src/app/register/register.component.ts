@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +10,12 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-  constructor(private builder: FormBuilder, private toastr: ToastrService) {}
+  constructor(
+    private builder: FormBuilder,
+    private toastr: ToastrService,
+    private service: AuthService,
+    private router: Router
+  ) {}
 
   registrationForm = this.builder.group({
     id: this.builder.control(
@@ -28,6 +35,15 @@ export class RegisterComponent {
 
   proceedRegistration() {
     if (this.registrationForm.valid) {
+      this.service
+        .proceedRegister(this.registrationForm.value)
+        .subscribe((res) => {
+          this.toastr.success(
+            'Please contact admin for enable access',
+            'Registered Successfully'
+          );
+          this.router.navigate(['login']);
+        });
     } else {
       this.toastr.warning('Please enter valid data');
     }

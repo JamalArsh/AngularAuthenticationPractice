@@ -7,7 +7,7 @@
       "email": "admin@a.com",
       "gender": "male",
       "role": "",
-      "isActive": false
+      "isActive": true
     }
   ]
 }

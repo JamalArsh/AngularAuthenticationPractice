@@ -6,7 +6,7 @@
   />
   <span>Welcome</span>
   <a class="atag" routerLink="">Home</a>
-  <a class="atag" routerLink="/user">User</a>
+  <a *ngIf="isAdminUser" class="atag" routerLink="/user">User</a>
   <div class="spacer"></div>
   <a class="atag" routerLink="/login">Logout</a>
 </div>

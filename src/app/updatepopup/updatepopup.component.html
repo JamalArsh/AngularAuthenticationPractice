@@ -26,17 +26,17 @@
       <mat-form-field class="example-full-width">
         <mat-label>Role</mat-label>
         <mat-select formControlName="role">
+          <mat-option [value]="">Select option</mat-option>
           <mat-option *ngFor="let item of roleList" [value]="item.code">
             {{ item.name }}
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <!-- <div>
-        <mat-radio-group formControlName="gender" aria-label="Gender">
-          <mat-radio-button value="male">Male</mat-radio-button>
-          <mat-radio-button value="female">Female</mat-radio-button>
-        </mat-radio-group>
-      </div> -->
+      <div>
+        <mat-checkbox formControlName class="example-margin"
+          >Is Active</mat-checkbox
+        >
+      </div>
       <div>
         <button class="button" mat-raised-button color="primary">Update</button>
         <a class="button" mat-dialog-close mat-raised-button color="accent"

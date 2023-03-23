@@ -39,6 +39,7 @@
       <th mat-header-cell mat-sort-header *matHeaderCellDef>Action</th>
       <td mat-cell *matCellDef="let element">
         <a
+          *ngIf="element.role !== 'admin'"
           (click)="updateUser(element.id)"
           class="button"
           mat-raised-button

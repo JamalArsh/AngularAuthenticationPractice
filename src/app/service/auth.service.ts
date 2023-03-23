@@ -21,4 +21,13 @@ export class AuthService {
   updateRegister(code: any, inputData: any) {
     return this.http.put(this.apiurl + '/' + code, inputData);
   }
+  isLoggedIn() {
+    return sessionStorage.getItem('username') != null;
+  }
+
+  getUserRole() {
+    return sessionStorage.getItem('userrole') != null
+      ? sessionStorage.getItem('userrole')?.toString()
+      : '';
+  }
 }

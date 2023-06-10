@@ -2,9 +2,57 @@
   "user": [
     {
       "id": "admin",
-      "name": "admin",
-      "password": "asdfg",
-      "email": "admin@a.com",
+      "name": "NT Infotech",
+      "password": "Test$1234",
+      "email": "test@gmail.com",
+      "gender": "male",
+      "role": "admin",
+      "isActive": true,
+      "address": {
+        "area": "chennai"
+      }
+    },
+    {
+      "id": "testuser",
+      "name": "Test User",
+      "password": "Test@1234",
+      "email": "test@in.com",
+      "gender": "male",
+      "role": "user",
+      "isActive": true,
+      "address": {
+        "area": "chennai"
+      }
+    },
+    {
+      "id": "Jhon1",
+      "name": "NT Infotech",
+      "password": "Test@1233",
+      "email": "te@in.com",
+      "gender": "male",
+      "role": "tech",
+      "isActive": true,
+      "address": {
+        "area": "chennai"
+      }
+    },
+    {
+      "id": "ntuser",
+      "name": "ramesh",
+      "password": "Test@1234",
+      "email": "te@in.com",
+      "gender": "male",
+      "role": "tech",
+      "isActive": true,
+      "address": {
+        "area": "banglore"
+      }
+    },
+    {
+      "id": "arshath",
+      "name": "arshath",
+      "password": "qwertyu",
+      "email": "arsh@code.com",
       "gender": "male",
       "role": "",
       "isActive": true
@@ -12,12 +60,79 @@
   ],
   "role": [
     {
-      "code": "staff",
-      "name": "Staff"
+      "code": "user",
+      "name": "User"
     },
     {
-      "code": "quality",
-      "name": "Quality"
+      "code": "tech",
+      "name": "Technician"
+    }
+  ],
+  "menu": [
+    {
+      "code": "user",
+      "name": "User"
+    },
+    {
+      "code": "customer",
+      "name": "Customer"
+    }
+  ],
+  "roleaccess": [
+    {
+      "role": "admin",
+      "menu": "user",
+      "haveedit": true,
+      "haveadd": true,
+      "havedelete": true
+    },
+    {
+      "role": "admin",
+      "menu": "customer",
+      "haveedit": true,
+      "haveadd": true,
+      "havedelete": true
+    },
+    {
+      "role": "user",
+      "menu": "user",
+      "haveedit": false,
+      "haveadd": false,
+      "havedelete": false
+    },
+    {
+      "role": "user",
+      "menu": "customer",
+      "haveedit": true,
+      "haveadd": true,
+      "havedelete": false
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "name": "rakhesh",
+      "Creditlimit": 1000
+    },
+    {
+      "id": 2,
+      "name": "rahul",
+      "Creditlimit": 1000
+    },
+    {
+      "id": 3,
+      "name": "ramesh",
+      "Creditlimit": 1000
+    },
+    {
+      "id": 4,
+      "name": "rahim",
+      "Creditlimit": 1000
+    },
+    {
+      "id": 5,
+      "name": "robert",
+      "Creditlimit": 1000
     }
   ]
 }
